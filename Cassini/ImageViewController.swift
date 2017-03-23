@@ -27,12 +27,7 @@ class ImageViewController: UIViewController {
             }
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()        
-        imageURL = DemoURL.Stanford
-    }
-    
+       
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if image == nil {
