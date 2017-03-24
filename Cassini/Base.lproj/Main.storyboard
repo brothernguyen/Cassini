@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6z1-Ys-M4Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="P4s-Jk-zFa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,7 +29,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="Earth"/>
                                         <connections>
-                                            <segue destination="ZEa-ha-h8K" kind="show" identifier="Earth" id="I87-na-FT9"/>
+                                            <segue destination="SOJ-vE-s5t" kind="showDetail" identifier="Earth" id="wVD-Ia-Y1w"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGb-tn-CIo">
@@ -37,7 +37,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="Cassini"/>
                                         <connections>
-                                            <segue destination="ZEa-ha-h8K" kind="show" identifier="Cassini" id="tcf-tl-czD"/>
+                                            <segue destination="SOJ-vE-s5t" kind="showDetail" identifier="Cassini" id="5g5-XM-2Jo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XT-Wm-et5">
@@ -45,7 +45,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="Saturn"/>
                                         <connections>
-                                            <segue destination="ZEa-ha-h8K" kind="show" identifier="Saturn" id="J5z-em-D6z"/>
+                                            <segue destination="SOJ-vE-s5t" kind="showDetail" identifier="Saturn" id="nvL-WI-CYi"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -78,6 +78,11 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQ7-tn-I8h">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="CEF-Qy-iwG">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.080321829489999996" green="0.16133421689999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -87,13 +92,28 @@
                             <constraint firstItem="TQ7-tn-I8h" firstAttribute="bottom" secondItem="NXj-SK-5sQ" secondAttribute="top" id="dc1-qa-8hh"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="GMh-Jc-8na"/>
                     <connections>
                         <outlet property="scrollView" destination="TQ7-tn-I8h" id="STQ-uL-3ga"/>
+                        <outlet property="spinner" destination="CEF-Qy-iwG" id="75e-uz-K5R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UqV-Bq-YkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032.8" y="46.326836581709152"/>
+            <point key="canvasLocation" x="948" y="862.21889055472275"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="n1r-iW-Xw5">
+            <objects>
+                <splitViewController id="P4s-Jk-zFa" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="6z1-Ys-M4Y" kind="relationship" relationship="masterViewController" id="h4y-0L-iwF"/>
+                        <segue destination="SOJ-vE-s5t" kind="relationship" relationship="detailViewController" id="KsH-m7-hUk"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3zU-7g-DE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2050" y="400"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yDt-fa-kxL">
@@ -113,8 +133,26 @@
             </objects>
             <point key="canvasLocation" x="-930.39999999999998" y="39.130434782608695"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zdW-WM-N29">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SOJ-vE-s5t" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HXb-d2-Bmh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZEa-ha-h8K" kind="relationship" relationship="rootViewController" id="qik-SK-Yil"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WtE-R2-4uC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8.8000000000000007" y="862.21889055472275"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tcf-tl-czD"/>
+        <segue reference="5g5-XM-2Jo"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -60,10 +60,10 @@
 			children = (
 				681126A71E83B97B0070EE90 /* Main.storyboard */,
 				681126B61E83BA920070EE90 /* ImageViewController.swift */,
+				681126BA1E83DB9D0070EE90 /* CassiniViewController.swift */,
 				681126B81E83C2AF0070EE90 /* DemoURL.swift */,
 				681126AF1E83B97B0070EE90 /* Info.plist */,
 				681126B51E83B9C90070EE90 /* Supporting Files */,
-				681126BA1E83DB9D0070EE90 /* CassiniViewController.swift */,
 			);
 			path = Cassini;
 			sourceTree = "<group>";
@@ -315,6 +315,7 @@
 				681126B41E83B97B0070EE90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
